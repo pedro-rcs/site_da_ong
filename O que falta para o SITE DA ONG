@@ -1,0 +1,137 @@
+- Colocar um link para cadstro novo.
+- Colocar na caixa de login, o negócio para ver ou não a senha.
+- Colocar todo o oi na página inicial do servidor.
+
+
+
+
+Colocar alguma ação nos 3 itens da landing page e ver o que se faz de diferente com aqueles botões modernozos estilo 2021.
+
+DEIXAR CARREGANDO BLAZING FAST, COM TUDO LOCALMENTE
+
+
+
+- Quando só tem um dá xabú.
+- Quando se toca um vídeo, as setas ficam desabilitadas na opção para pc.
+- Quando a galeria tem vídeos, as rolagens ficam muito, muuuito lentas.
+
+SÓ.
+
+
+
+Pra fazer
+* Colocar um fundo fubento embaixo das letras, na frente do fundo com foto.
+* Barrinha de "Seus visitantes veem assim".
+* Clicar no fundo preto da galeria de imagens para fechar também, ao invés de ser só no xis.
+* Colocar o negócio do endereco_web pra não ser as rotas utilizadas pelo sistema.
+* Todo o Javascript das funcionalidades do monta_site.
+* Alteração de chavepix no paguepix.
+* Fazer funcionar o mandar e-mail do Index.
+* Ver certinho a index com o plano pago, preços e etc.
+* Alterar o nome do endereço do site, e alterar a pasta.
+* Pagar um domínio.
+* Comprar o domínio .com e o .com.br, depois redirecionar o menos popular pro mais popular.
+* Publicar na Umbler.
+* Tirar a borboleta do fundo da thumb da galeria.
+* Ajeitar aquilo de capa da galeria.
+
+
+
+* No começo, colocarei um SPA normal, mas assim que tiver tudo funcionando, preciso deixar PWA, com navegação massa offline mesmo, converter a parada toda.
+* Pra beeem depois, fazer o explorar.
+* Quando se digita uma url, ele não pusha o popstate, ele replaça. Ao menos é o que parece pois quando se clica no voltar, a seta pra frente, no navegador, fica cinza e não preta.
+
+------------------------------------------------------------------
+
+
+O que falta para o SITE DA ONG
+
+landing_page_institucional.html
+* Carregar as fontes offline
+* Deixar tudo PWA
+* favicon - SDO
+* Retirar os icones da fontawesome
+
+blog.html
+* Um iconezinho do site, à esquerda do logo do blog do site da ong. com um site e uma flechinha.
+* Ajeitar o rodapé.
+* Deixar tudo PWA.
+* Integrar com o servidor.
+* Fazer a página de vizualização da postagem.
+
+
+
+O blog precisa estar no msm webapp do sistema_site pois o cliente vai instalar o webapp para ter controle sobre o site e pâns, daí sempre que logar ele vai ser notificado sobre posts novo no blog. O institucional da landing page pode ser incluido também. Aí se o cara baixa o webapp e já está logado, nao mostra a parte institucional, se ele não está logado mostra o login e como fazer pra ele também logar neste maravilhoso mundo do Site da Ong. Oeeee!!
+
+
+
+* Colocar a biblioteca oi completa, com troca de senha e tudo, no login
+* Colocar a edição de eventos pronta
+* Colocar a edição do site pronta
+
+===============
+MAIS PRA FRENTE
+
+* Colocar a edição do site como um site pequeno em miniatura, fulano clica na parte que quer editar e... edita.
+* Se o usuário registrar a ONG sem visao, missao ou valores, da xabú na hora de editar estes elementos. O usuário precisa poder cadastrar sem estes itens se nao quiser e não pode dar xabú na hora da edição.
+* Ver a parada da data na galeria, ela altera sempre, uma loucuuura.
+--
+BLOG
+
+* Acho que só. Depois inserir imagens.
+* Tela de adm, com postar novas matérias, alterar matérias, lista de clientes com o plano e o pagamento do mês, lista com os e-mails criados bonitamentes, endereços que já foram enviados e disparador de e-mails.
+* Criar um Instagram e uma página no Facebook.
+* Para cada matéria postada no blog dá para fazer uns 3 ou quatro posts rápidos para Instagram e Facebook.
+* Preparar uma newsletter.
+* Ver toda a parada de entrar no app logado mas offline com service workers.
+
+Software Decoreba
+
+Para decorar HTML, Alfabeto àrabe e Esperanto w Swaili. Dentre outras coisas.
+
+POr enquanto no sistema adm nao precisa editar o perfil, ja que só eu qeum irei utilizar no omeoento.
+
+
+De agora em diante:
+
+* Fazer ícones como os do font-awesome, para guardar offline e não depender de cdn.
+* Um ícone só os contornos e ele preenchido para onhover e ativo.
+	* Desenhar no papel todos os ícones. Preenchidos e com contorno, bem detalhados.
+	* Passar para o photoshop, converter eles e usá-los em fontes.
+* Colocar o negócio de ir carregando conforme vai scrollando pra baixo, tipo instagrám.
+
+==========================================================================
+Testando service workers no Chrome!
+
+google-chrome --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://192.168.0.176:3001/adm_sistema --user-data-dir=/tmp/foo
+
+ou
+
+google-chrome --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://localhost:3001/adm_sistema --user-data-dir=/tmp/foo
+
+
+=============================================================================
+Comportamento de service workers no chrome.
+
+
+Salvar imagens, todas elas
+Colocar um tempo para elas expirarem
+Salvar sempre com nomes aleatorios grandes e diferentes
+Se trocar a imagem de perfil por exemplo, o nome da imagem (request) vai mudar tb
+Então o service worker vai trazer a imagem mudada, a mais nova
+O mesmo pode acontecer com javascriptos, colocar a versao no nome dele
+Só que para javascriptos, tem que ter um javascripto inspetor que ve cada elemento do webapp e ver qual versao de javascriptos é necessária para fazer cada coisa
+Se não tem a versao necessaria no offline, mostra um aviso de ser preciso atualizar e mostra o que da na versao antiga, offlinemente.
+Quando entrar online, atualiza automaticamente
+
+
+O mesmo pode ser feito com arquivos de texto também
+O cliente solicita ao servidor o texto a ser lido
+O servidor manda e o cliente recebe
+O cliente transforma este texto em um txt, ou algo parecido
+Mostra o que tem nesse txt na tela e automaticamente ja copia ele pro service worker
+.
+Quando o cliente for acessar novamente, mas offline, o sw manda a versao gravada
+Se estiver online, ele manda a versao gravada msm assim, mas faz uma chamada ao servidor, para ver se a versao gravada é a mais recente.
+Se for, ótimo, continua com ela, se não for, o servidor manda a versao mais recente
+O cliente recebe e ja atualiza na hora, a tela e o texto do service worker.
