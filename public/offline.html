@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Site da ONG</title>
+
+	<script src="https://kit.fontawesome.com/2e7c10cc41.js" crossorigin="anonymous"></script>
+
+  <!-- Bebas online -->
+  <link rel="stylesheet" href="https://use.typekit.net/rwh4sui.css">
+
+	<link rel="manifest" href="adm_manifest/manifest.webmanifest">
+	<meta http-equiv="Content-Language" content="pt-br">
+	<link rel="apple-touch-icon" href="imagens/pwa-icon-ios.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#764ABC">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /><!-- Optimal Internet Explorer compatibility -->
+
+	<!-- O JQuery só está aqui pela máscara de dinheiro, o maskmoney. Preciso ajeitar pra tudo funfar sem o Jquery o mais rápido posílvio -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="
+	sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"/></script>
+
+	<!-- CSS Próprio -->
+	<link rel="stylesheet" type="text/css" href="css/fontello.css">
+	<link rel="stylesheet" type="text/css" href="css/simples.css">
+	<link rel="stylesheet" type="text/css" href="css/landing_page.css">
+
+	<script type="text/javascript" src="js/funcoes_operacionais/funcoes_gerais.js" ></script>
+	<script type="text/javascript" src="js/bibliotecas_terceiros/qrcode/qrcode.js"></script>
+	<script type="text/javascript" src="js/bibliotecas_terceiros/vanilla-masker/vanilla-masker.js"></script>
+	<script type="text/javascript" src="js/bibliotecas_proprias/gera_qr_pix/gera_payload_estatico.js" ></script>
+
+	<script type="text/javascript" src="js/montadores/monta_index.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_altera_senha.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_construtor_site.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_site.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_sistema_home.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_sistema_altera.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_sistema_fotos_videos.js" ></script>
+	<script type="text/javascript" src="js/montadores/monta_sistema_aulas.js" ></script>
+	<script type="text/javascript" src="js/roteamento.js" ></script>
+
+</head>
+
+<body onload="inicio( JSON.stringify({ 'tela': 'index' }) )" style="margin: 0; padding: 0;">
+
+	<noscript>JavaScript desabilitado. Por favor, habilite-lho para utilizar o site em toda sua magnitúlde!</noscript>
+
+	<div id="container_loading" class="flex_row center container_loading" style="display: none;">
+		<div class="loader"></div>
+	</div>
+
+	<div id="div_palco_index" class="palco">
+
+	</div>
+
+	<script type="text/javascript">
+		if (!('serviceWorker' in navigator)) {
+			console.log("Service Worker não suportado.")
+			// return
+		}
+		if('serviceWorker' in navigator) {
+
+			window.addEventListener('load', () => {
+				//navigator.serviceWorker.register('pwabuilder-sw.js')
+				navigator.serviceWorker.register('sw.js')
+					.then(reg => {
+						console.log("Registrou!! O scope é: ", reg.scope)
+					}).catch(err => {
+						console.log("Registro falhou: ", err)
+					})
+			})
+
+	  }
+	</script>
+</body>
+</html>

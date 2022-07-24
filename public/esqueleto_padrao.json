@@ -1,0 +1,24 @@
+{	
+	"versao": "1.0.3",
+	"data_modificacao": "data_vai_agah",
+	"img_frente": "tv_1.png", 
+	"itens": [
+		"font_fontello/fontello.eot",
+		"font_fontello/fontello.svg",
+		"font_fontello/fontello.ttf",
+		"font_fontello/fontello.woff",
+		"font_fontello/fontello.woff2",
+		"css/fontello.css",
+		"esqueleto_padrao.json",
+		"js/func.js",
+	  "css/simples.css",
+	  "css/geral_adm.css",
+	  "imagens/conteudo_tv/tv_1.png",
+	  "imagens/img_nao_encontrada.png",
+	  "adm_manifest/manifest.webmanifest",
+	  "favicon.ico",
+	  "imagens/pwa-icon-ios.png",
+	  "imagens/maskable_icon_x1.png",
+	  "offline.html"
+	]
+}
